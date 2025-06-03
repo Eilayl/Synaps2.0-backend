@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const authRoute = require('./routes/userRoute');
+const botRoute = require('./routes/botRoute');
 
 // 🌐 CORS config (כולל credentials)
 app.use(cors({
@@ -43,6 +44,8 @@ mongoose.connect(process.env.MONGO_URL)
 
 // 🚏 Routes
 app.use('/auth', authRoute);
+app.use('/bot', botRoute);
+
 
 // 🚀 Server
 const PORT = process.env.PORT || 8000;
