@@ -48,7 +48,7 @@ exports.APIresponse = async (req, res) => {
     const responseText = (lastMessage?.type === "text") ? lastMessage.text.value : "No response from assistant.";
 
     // החזר את התגובה וגם את ה-threadId כדי לשמור בצד לקוח
-    return res.json({ response: responseText, threadId });
+    return res.send({message: {response: responseText, thread:threadId}});
 
   } catch (err) {
     console.error("API Error:", err);
