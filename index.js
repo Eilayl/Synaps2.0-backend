@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const authRoute = require('./routes/userRoute');
 const botRoute = require('./routes/botRoute');
-
+const reportRoute = require('./routes/reportRoute');
 // 🌐 CORS config (כולל credentials)
 app.use(cors({
   origin: ['https://neurochat-frontend.onrender.com', 'http://localhost:3000'],
@@ -45,7 +45,7 @@ mongoose.connect(process.env.MONGO_URL)
 // 🚏 Routes
 app.use('/auth', authRoute);
 app.use('/bot', botRoute);
-
+app.use('/report', reportRoute);
 
 // 🚀 Server
 const PORT = process.env.PORT || 8000;

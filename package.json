@@ -17,6 +17,7 @@
     "express": "^5.1.0",
     "express-session": "^1.18.1",
     "mongoose": "^8.15.1",
+    "nodemailer": "^7.0.3",
     "openai": "^4.104.0"
   },
   "devDependencies": {
